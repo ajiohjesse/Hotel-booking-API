@@ -2,10 +2,10 @@
   "name": "lamabookingapp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "module",
+  "main": "/functions/index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "dev": "netlify dev"
   },
   "keywords": [],
   "author": "",

@@ -1,13 +1,16 @@
-import express from 'express';
-import {
+const express = require('express');
+
+const {
   createRoom,
   deleteRoom,
   getRoom,
   getRooms,
   updateRoom,
   updateRoomAvailability,
-} from '../controllers/roomCont.js';
-import { verifyAdmin } from '../lib/verifyToken.js';
+} = require('../controllers/roomCont.js');
+
+const { verifyAdmin } = require('../lib/verifyToken.js');
+
 const router = express.Router();
 
 //CREATE
@@ -23,4 +26,4 @@ router.get('/:id', getRoom);
 //GET ALL
 router.get('/', getRooms);
 
-export default router;
+module.exports = router;

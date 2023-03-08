@@ -1,14 +1,16 @@
-import express from 'express';
-import {
+const express = require('express');
+
+const {
   deleteUser,
   getUser,
-  getUsers,
   updateUser,
-} from '../controllers/userCont.js';
-import {
+} = require('../controllers/userCont.js');
+
+const {
   verifyAdmin,
   verifyUser,
-} from '../lib/verifyToken.js';
+} = require('../lib/verifyToken.js');
+
 const router = express.Router();
 
 // router.get("/checkauthentication/:id", verifyAdmin, (req, res, next) => {
@@ -30,4 +32,4 @@ router.get('/test/me', async (req, res) => {
 //GET ALL
 router.get('/', verifyAdmin, getUsers);
 
-export default router;
+module.exports = router;
