@@ -5,4 +5,4 @@ const createError = (status, message) => {
   return err;
 };
 
-export default createError;
+module.exports = createError;

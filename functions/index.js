@@ -7,10 +7,13 @@ const authRouter = require('../src/routes/auth.js');
 const usersRouter = require('../src/routes/users.js');
 const hotelsRouter = require('../src/routes/hotels.js');
 const roomsRouter = require('../src/routes/rooms.js');
+const dbConnect = require('../src/lib/mongoose.js');
 
 const app = express();
 
 dotenv.config();
+
+dbConnect().catch(err => console.log(err));
 
 //middlewares
 app.use(cors());
