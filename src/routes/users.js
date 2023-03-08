@@ -3,6 +3,7 @@ const express = require('express');
 const {
   deleteUser,
   getUser,
+  getUsers,
   updateUser,
 } = require('../controllers/userCont.js');
 

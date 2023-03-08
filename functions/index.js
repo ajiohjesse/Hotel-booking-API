@@ -3,10 +3,10 @@ const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const ServerlessHttp = require('serverless-http');
-const authRouter = require('../src/routes/auth.js');
-const usersRouter = require('../src/routes/users.js');
-const hotelsRouter = require('../src/routes/hotels.js');
-const roomsRouter = require('../src/routes/rooms.js');
+const authRoute = require('../src/routes/auth.js');
+const usersRoute = require('../src/routes/users.js');
+const hotelsRoute = require('../src/routes/hotels.js');
+const roomsRoute = require('../src/routes/rooms.js');
 const dbConnect = require('../src/lib/mongoose.js');
 
 const app = express();
@@ -33,9 +33,9 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.use('/api/auth', authRouter);
-app.use('/api/users', usersRouter);
-app.use('/api/hotels', hotelsRouter);
-app.use('/api/rooms', roomsRouter);
+app.use('/api/auth', authRoute);
+app.use('/api/users', usersRoute);
+app.use('/api/hotels', hotelsRoute);
+app.use('/api/rooms', roomsRoute);
 
 module.exports.handler = ServerlessHttp(app);
