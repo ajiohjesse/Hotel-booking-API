@@ -21,6 +21,12 @@ router.put('/:id', verifyUser, updateUser);
 router.delete('/:id', verifyUser, deleteUser);
 //GET
 router.get('/:id', verifyUser, getUser);
+
+router.get('/test/me', async (req, res) => {
+  res.status(200).json({
+    name: 'Jesse Ajioh',
+  });
+});
 //GET ALL
 router.get('/', verifyAdmin, getUsers);
 
